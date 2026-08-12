@@ -15,11 +15,11 @@ export const sendJWTToken = (res, user, message, statusCode = 200) => {
     .cookie("authToken", jwtToken, {
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
       // sameSite: "none",
-      sameSite: "lax",
+      // sameSite: "lax",
       // for development false
       secure: true,
       httpOnly: true,
-      // domain: ".mytimeco.work",
+      domain: ".mytimeco.work",
     })
     .json({
       success: true,
