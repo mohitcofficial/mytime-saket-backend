@@ -32,14 +32,14 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "https://virtualxcel.in",
-      "https://www.virtualxcel.in",
-      "https://sales.virtualxcel.in",
-      "https://admin.virtualxcel.in",
-      "https://virtualxcel.co.in",
-      "https://www.virtualxcel.co.in",
+      // "http://localhost:3000",
+      // "http://localhost:3001",
+      "https://admin.mytimeco.work",
+      "https://www.admin.mytimeco.work",
+      "https://operation.mytimeco.work",
+      "https://www.operation.mytimeco.work",
+      "https://accounts.mytimeco.work",
+      "https://www.accounts.mytimeco.work",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
