@@ -10,6 +10,8 @@ config({
 });
 
 const app = express();
+app.set("trust proxy", 1);
+
 const limiter = rateLimit({
   windowMs: 10 * 1000,
   limit: 20,
@@ -18,7 +20,6 @@ const limiter = rateLimit({
 });
 
 app.use(limiter);
-app.set("trust proxy", 1);
 
 app.use(express.json());
 
