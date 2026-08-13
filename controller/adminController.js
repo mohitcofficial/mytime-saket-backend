@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 
 export const createAdmin = catchAsyncError(async (req, res, next) => {
   const { name, email, phone, password, user } = req.body;
-  console.log("user: ", user);
+
   if (!name) return next(new ErrorHandler("Please provide name", 400));
   if (!email) return next(new ErrorHandler("Please provide email", 400));
   if (!phone) return next(new ErrorHandler("Please provide phone", 400));
@@ -25,7 +25,7 @@ export const createAdmin = catchAsyncError(async (req, res, next) => {
     password,
     role,
     phone,
-    createdBy: user._id,
+    createdBy: req.user?._id,
   });
 
   res.status(201).json({
