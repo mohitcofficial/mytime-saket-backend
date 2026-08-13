@@ -292,7 +292,7 @@ export const logout = catchAsyncError(async (req, res, next) => {
       httpOnly: true,
       secure: true,
       sameSite: "none",
-      // domain: ".virtualxcel.in",
+      domain: ".virtualxcel.in",
     })
     .json({
       success: true,
