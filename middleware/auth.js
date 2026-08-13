@@ -15,6 +15,8 @@ export const isAuthenticated = catchAsyncError(async (req, res, next) => {
   console.log("decoded: ", decoded);
   let user = await User.findById(decoded._id);
 
+  console.log("user: ", user);
+
   if (!user) return next(new ErrorHandler("Not Logged In !", 401));
   if (!user.isActive)
     return next(
