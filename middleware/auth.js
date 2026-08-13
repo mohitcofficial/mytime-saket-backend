@@ -8,8 +8,11 @@ export const isAuthenticated = catchAsyncError(async (req, res, next) => {
 
   if (!authToken) return next(new ErrorHandler("Not logged in!", 401));
 
+  console.log("authToken: ", authToken);
+
   const decoded = jwt.verify(authToken, process.env.JWT_SECRET);
 
+  console.log("decoded: ", decoded);
   let user = await User.findById(decoded._id);
 
   if (!user) return next(new ErrorHandler("Not Logged In !", 401));
